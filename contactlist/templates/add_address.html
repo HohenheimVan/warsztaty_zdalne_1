@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add person</title>
+</head>
+<body>
+        <br>
+        {{ modified_person.first_name }} {{ modified_person.last_name }}<br>
+        {{ modified_person.description }}<br>
+    <form method="post">
+        <p><label>City:<br>
+            <input type="text" name="city">
+        </label></p>
+        <p><label>Street:<br>
+            <input type="text" name="street">
+        </label></p>
+        <p><label>House number:<br>
+            <input type="text" name="house_number">
+        </label></p>
+        <p><label>Apartment number:<br>
+            <input type="text" name="apartment_number">
+        </label></p>
+        <input type="submit" value="Save">
+        {% csrf_token %}
+    </form>
+{% if success %}
+    <p>Dodano: <br>
+        City: {{ new_address.city }}<br>
+        Street: {{ new_address.street }}<br>
+        House number: {{ new_address.house_number }}/{{ new_address.apartment_number }}<br>
+    </p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show person</title>
+</head>
+<body>
+{% for person in people %}
+    <p>
+        {{ person.first_name }} {{ person.last_name }}<br>
+        {{ person.description }} <a href=/modify/{{ person.pk }}/>Edytuj</a> <a href=/delete/{{ person.pk }}/> Usun</a><br>
+    </p>
+{% endfor %}
+</body>
+</html>
